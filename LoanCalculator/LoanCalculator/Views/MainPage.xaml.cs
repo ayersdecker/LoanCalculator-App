@@ -9,6 +9,8 @@ public partial class MainPage : ContentPage
 {
     // The loan period is set by the radio buttons
     public int LoanPeriod = 0;
+    // The schedule is created when the user clicks the Create button
+    public ScheduleModel schedule;
 
 	public MainPage()
 	{
