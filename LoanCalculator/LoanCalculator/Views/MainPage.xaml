@@ -5,8 +5,15 @@
 
     <ScrollView>
         <VerticalStackLayout >
+            <!-- Loan Calc Form -->
+            
+            <!-- Loan Amount -->
             <Entry x:Name="LoanAmount" ClearButtonVisibility="WhileEditing" Placeholder="Loan Amount" Keyboard="Numeric" PlaceholderColor="#999" WidthRequest="300"/>
+            
+            <!-- Interest Rate -->
             <Entry x:Name="InterestRate" ClearButtonVisibility="WhileEditing" Placeholder="Interest Rate" Keyboard="Numeric" PlaceholderColor="#999" WidthRequest="300"/>
+            
+            <!-- Loan Period -->
             <Picker x:Name="LoanPeriod" Title="Loan Period" TitleColor="#999" WidthRequest="300">
                 <Picker.Items>
                     <x:String>10 Year</x:String>
@@ -14,15 +21,22 @@
                     <x:String>30 Years</x:String>
                 </Picker.Items>
             </Picker>
+            
+            <!-- Down Payment? -->
+            
+            <!-- Payment Sequence -->
             <HorizontalStackLayout Margin="10" HorizontalOptions="Center">
                 <Label x:Name="MonthLabel" Text="Monthly" VerticalOptions="Center" FontAttributes="Bold"/>
                 <Switch x:Name="MonthToggle" IsToggled="True" ThumbColor="#999" Toggled="MonthToggle_Toggled"/>
             </HorizontalStackLayout>
+            
+            <!-- Calculated Payment Amount -->
             <HorizontalStackLayout Margin="20">
                 <Label Text="Payment:" FontAttributes="Bold" FontSize="Small" Margin="5" WidthRequest="75"/>
                 <Label x:Name="Payment" FontAttributes="Bold" FontSize="Medium" Margin="5" Text="PAYMENT APPEARS HERE" HorizontalOptions="End"/>
             </HorizontalStackLayout>
             
+            <!-- Form Controls -->
             <Grid Margin="20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
