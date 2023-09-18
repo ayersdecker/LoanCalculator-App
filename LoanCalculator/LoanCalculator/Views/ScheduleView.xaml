@@ -2,7 +2,49 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LoanCalculator.Views.ScheduleView"
+             xmlns:local="clr-namespace:LoanCalculator.Models"
              Title="ScheduleView">
+    
     <VerticalStackLayout>
+        <CollectionView x:Name="PaymentCollection">
+            <CollectionView.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Payment Number" FontSize="Micro" Grid.Column="0" />
+                    <Label Text="Start Balance" FontSize="Micro" Grid.Column="1" />
+                    <Label Text="Principle Paid" FontSize="Micro" Grid.Column="2" />
+                    <Label Text="Interest Paid}" FontSize="Micro" Grid.Column="3" />
+                    <Label Text="New Balance" FontSize="Micro" Grid.Column="4" />
+                    <Label Text="Payment Amount" FontSize="Micro" Grid.Column="5" />
+                </Grid>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="local:PaymentModel">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding PaymentNumber}" Grid.Column="0" />
+                        <Label Text="{Binding StartBalance}" Grid.Column="1" />
+                        <Label Text="{Binding PaymentAmount}" Grid.Column="2" />
+                        <Label Text="{Binding InterestPaid}" Grid.Column="3" />
+                        <Label Text="{Binding NewBalance}" Grid.Column="4" />
+                        <Label Text="{Binding PaymentAmount}" Grid.Column="5" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>
