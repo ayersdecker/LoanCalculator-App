@@ -21,6 +21,12 @@
                     <x:String>30 Years</x:String>
                 </Picker.Items>
             </Picker>
+            <!-- Loan Period 2 -->
+            <HorizontalStackLayout Margin="10" HorizontalOptions="Center">
+                <RadioButton Content="10 Years" GroupName="term"/>
+                <RadioButton Content="15 Years" GroupName="term"/>
+                <RadioButton Content="30 Years" GroupName="term"/>
+            </HorizontalStackLayout>
             
             <!-- Down Payment? -->
             
