@@ -8,10 +8,10 @@
             <!-- Loan Calc Form -->
             
             <!-- Loan Amount -->
-            <Entry x:Name="LoanAmount" ClearButtonVisibility="WhileEditing" Placeholder="Loan Amount" Keyboard="Numeric" PlaceholderColor="#999" WidthRequest="300"/>
+            <Entry x:Name="LoanAmount" ClearButtonVisibility="WhileEditing" Placeholder="Loan Amount" ReturnType="Next" Keyboard="Numeric" PlaceholderColor="#999" WidthRequest="300"/>
             
             <!-- Interest Rate -->
-            <Entry x:Name="InterestRate" ClearButtonVisibility="WhileEditing" Placeholder="Interest Rate" Keyboard="Numeric" PlaceholderColor="#999" WidthRequest="300"/>
+            <Entry x:Name="InterestRate" ClearButtonVisibility="WhileEditing" Placeholder="Interest Rate" ReturnType="Next" Keyboard="Numeric" PlaceholderColor="#999" WidthRequest="300"/>
             
             <!-- Loan Period -->
             <Picker x:Name="LoanPeriod" Title="Loan Period" TitleColor="#999" WidthRequest="300">
