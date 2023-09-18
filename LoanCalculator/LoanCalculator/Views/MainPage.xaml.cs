@@ -29,9 +29,11 @@ public partial class MainPage : ContentPage
         int loanPeriod = LoanPeriod;
         bool monthly = MonthToggle.IsToggled;
 
-        // Build a ScheduleModel object and pass it to the ScheduleView
+        // Create the schedule
         ScheduleModel schedule = new ScheduleModel(loanAmount, interestRate, loanPeriod, monthly);
-        Navigation.PushAsync(new ScheduleView(schedule), false);
+
+        // Display the payment
+        Payment.Text = schedule.Payments[0].PaymentAmount.ToString("C2");
     }
 
     private void ClearForm(object sender, EventArgs e)
@@ -47,6 +49,12 @@ public partial class MainPage : ContentPage
     {
         // Set the loan period based on the radio button that was checked
         LoanPeriod = (int)((RadioButton)sender).Value;
+    }
+
+    private void View_Clicked(object sender, EventArgs e)
+    {
+        // Get the values from the form
+        Navigation.PushAsync(new ScheduleView(schedule), false);
     }
 }
 

@@ -42,6 +42,9 @@
                 <Button x:Name="CreateButton"  Grid.Column="1" Margin="0,5,5,5" Text="Create" Clicked="CreateButton_Clicked"/>
             </Grid>
             
+            <!-- Payment Schedule -->
+            <Button Text="View Schedule" Margin="20" Clicked="View_Clicked"/>
+
         </VerticalStackLayout>
     </ScrollView>
 
