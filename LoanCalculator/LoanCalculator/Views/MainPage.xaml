@@ -13,17 +13,18 @@
             <Entry x:Name="InterestRate" ClearButtonVisibility="WhileEditing" Placeholder="Interest Rate" ReturnType="Next" Keyboard="Numeric" PlaceholderColor="#999" WidthRequest="300"/>
 
             <!-- Loan Period -->
-            <HorizontalStackLayout x:Name="SelectedTerm" Margin="10" HorizontalOptions="Center" RadioButtonGroup.GroupName="SelectedTerm">
-                <RadioButton Content="10 Years" CheckedChanged="RadioButton_CheckedChanged"/>
-                <RadioButton Content="15 Years" CheckedChanged="RadioButton_CheckedChanged"/>
-                <RadioButton Content="30 Years" CheckedChanged="RadioButton_CheckedChanged"/>
+            <HorizontalStackLayout x:Name="SelectedTerm" Margin="10" HorizontalOptions="Center">
+                <Label Text="Loan Period:"/>
+                <RadioButton Content="10 Years" Value="10" CheckedChanged="RadioButton_CheckedChanged"/>
+                <RadioButton Content="15 Years" Value="15" CheckedChanged="RadioButton_CheckedChanged"/>
+                <RadioButton Content="30 Years" Value="30" CheckedChanged="RadioButton_CheckedChanged"/>
             </HorizontalStackLayout>
 
             <!-- Payment Sequence -->
-            <StackLayout Margin="10" HorizontalOptions="Center">
+            <HorizontalStackLayout Margin="10" HorizontalOptions="Center">
                 <Label x:Name="MonthLabel" Text="Monthly" VerticalOptions="Center" FontAttributes="Bold"/>
                 <Switch x:Name="MonthToggle" IsToggled="True" ThumbColor="#999" Toggled="MonthToggle_Toggled"/>
-            </StackLayout>
+            </HorizontalStackLayout>
             
             <!-- Calculated Payment Amount -->
             <HorizontalStackLayout Margin="20">
