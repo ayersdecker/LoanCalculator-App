@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoanCalculator.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout >
+            <Entry x:Name="LoanAmount" Placeholder="Loan Amount" Keyboard="Numeric" PlaceholderColor="#999" WidthRequest="300"/>
+            <Entry x:Name="InterestRate" Placeholder="Interest Rate" Keyboard="Numeric" PlaceholderColor="#999" WidthRequest="300"/>
+            <Picker x:Name="LoanPeriod" Title="Loan Period" TitleColor="#999" WidthRequest="300">
+                <Picker.Items>
+                    <x:String>10 Year</x:String>
+                    <x:String>15 Years</x:String>
+                    <x:String>30 Years</x:String>
+                </Picker.Items>
+            </Picker>
+            <HorizontalStackLayout Margin="10" HorizontalOptions="Center">
+                <Label x:Name="MonthLabel" Text="Monthly" VerticalOptions="Center" FontAttributes="Bold"/>
+                <Switch x:Name="MonthToggle" IsToggled="True" ThumbColor="#999" Toggled="MonthToggle_Toggled"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Payment:" FontAttributes="Bold" FontSize="Small" Margin="5"/>
+                <Label x:Name="Payment" FontAttributes="Bold" FontSize="Large" Margin="5" Text="PAYMENT APPEARS HERE"/>
+            </HorizontalStackLayout>
+            
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Margin="5" Text="Clear" BackgroundColor="#999"/>
+                <Button Grid.Column="1" Margin="0,5,5,5" Text="Create"/>
+            </Grid>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
