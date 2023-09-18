@@ -4,7 +4,7 @@
              x:Class="LoanCalculator.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout >
+        <VerticalStackLayout Spacing="10">
             <!-- Loan Calc Form -->
             
             <!-- Loan Amount -->
