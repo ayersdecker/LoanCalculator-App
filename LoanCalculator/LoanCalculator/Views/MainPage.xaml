@@ -5,41 +5,30 @@
 
     <ScrollView>
         <VerticalStackLayout Spacing="10">
-            <!-- Loan Calc Form -->
-            
+
             <!-- Loan Amount -->
             <Entry x:Name="LoanAmount" ClearButtonVisibility="WhileEditing" Placeholder="Loan Amount" ReturnType="Next" Keyboard="Numeric" PlaceholderColor="#999" WidthRequest="300"/>
             
             <!-- Interest Rate -->
             <Entry x:Name="InterestRate" ClearButtonVisibility="WhileEditing" Placeholder="Interest Rate" ReturnType="Next" Keyboard="Numeric" PlaceholderColor="#999" WidthRequest="300"/>
-            
+
             <!-- Loan Period -->
-            <Picker x:Name="LoanPeriod" Title="Loan Period" TitleColor="#999" WidthRequest="300">
-                <Picker.Items>
-                    <x:String>10 Year</x:String>
-                    <x:String>15 Years</x:String>
-                    <x:String>30 Years</x:String>
-                </Picker.Items>
-            </Picker>
-            <!-- Loan Period 2 -->
-            <HorizontalStackLayout Margin="10" HorizontalOptions="Center">
-                <RadioButton Content="10 Years" GroupName="term"/>
-                <RadioButton Content="15 Years" GroupName="term"/>
-                <RadioButton Content="30 Years" GroupName="term"/>
+            <HorizontalStackLayout x:Name="SelectedTerm" Margin="10" HorizontalOptions="Center" RadioButtonGroup.GroupName="SelectedTerm">
+                <RadioButton Content="10 Years" CheckedChanged="RadioButton_CheckedChanged"/>
+                <RadioButton Content="15 Years" CheckedChanged="RadioButton_CheckedChanged"/>
+                <RadioButton Content="30 Years" CheckedChanged="RadioButton_CheckedChanged"/>
             </HorizontalStackLayout>
-            
-            <!-- Down Payment? -->
-            
+
             <!-- Payment Sequence -->
-            <HorizontalStackLayout Margin="10" HorizontalOptions="Center">
+            <StackLayout Margin="10" HorizontalOptions="Center">
                 <Label x:Name="MonthLabel" Text="Monthly" VerticalOptions="Center" FontAttributes="Bold"/>
                 <Switch x:Name="MonthToggle" IsToggled="True" ThumbColor="#999" Toggled="MonthToggle_Toggled"/>
-            </HorizontalStackLayout>
+            </StackLayout>
             
             <!-- Calculated Payment Amount -->
             <HorizontalStackLayout Margin="20">
                 <Label Text="Payment:" FontAttributes="Bold" FontSize="Small" Margin="5" WidthRequest="75"/>
-                <Label x:Name="Payment" FontAttributes="Bold" FontSize="Medium" Margin="5" Text="PAYMENT APPEARS HERE" HorizontalOptions="End"/>
+                <Label x:Name="Payment" FontAttributes="Bold" FontSize="Medium" Margin="5" Text="" HorizontalOptions="End"/>
             </HorizontalStackLayout>
             
             <!-- Form Controls -->
@@ -48,8 +37,8 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Margin="5" Text="Clear" BackgroundColor="#999"/>
-                <Button Grid.Column="1" Margin="0,5,5,5" Text="Create"/>
+                <Button x:Name="ClearButton" Grid.Column="0" Margin="5" Text="Clear" BackgroundColor="#999" Clicked="ClearForm"/>
+                <Button x:Name="CreateButton"  Grid.Column="1" Margin="0,5,5,5" Text="Create" Clicked="CreateButton_Clicked"/>
             </Grid>
             
         </VerticalStackLayout>

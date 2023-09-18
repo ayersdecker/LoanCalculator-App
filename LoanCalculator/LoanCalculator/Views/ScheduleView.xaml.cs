@@ -1,8 +1,10 @@
+using LoanCalculator.Models;
+
 namespace LoanCalculator.Views;
 
 public partial class ScheduleView : ContentPage
 {
-	public ScheduleView()
+	public ScheduleView(ScheduleModel schedule)
 	{
 		InitializeComponent();
 	}
