@@ -17,14 +17,13 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+                        </Grid.ColumnDefinitions>
                     <Label Text="Payment Number" FontSize="Micro" Grid.Column="0" />
                     <Label Text="Start Balance" FontSize="Micro" Grid.Column="1" />
                     <Label Text="Principle Paid" FontSize="Micro" Grid.Column="2" />
                     <Label Text="Interest Paid}" FontSize="Micro" Grid.Column="3" />
                     <Label Text="New Balance" FontSize="Micro" Grid.Column="4" />
-                    <Label Text="Payment Amount" FontSize="Micro" Grid.Column="5" />
+                    
                 </Grid>
             </CollectionView.Header>
             <CollectionView.ItemTemplate>
@@ -36,14 +35,12 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                             <Label Text="{Binding PaymentNumber}" Grid.Column="0" />
                             <Label Text="{Binding StartBalance, StringFormat='{0:C}'}" Grid.Column="1" />
                             <Label Text="{Binding PaymentAmount, StringFormat='{0:C}'}" Grid.Column="2" />
                             <Label Text="{Binding InterestPaid, StringFormat='{0:C}'}" Grid.Column="3" />
                             <Label Text="{Binding NewBalance, StringFormat='{0:C}'}" Grid.Column="4" />
-                            <Label Text="{Binding PaymentAmount, StringFormat='{0:C}'}" Grid.Column="5" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
