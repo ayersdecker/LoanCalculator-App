@@ -46,23 +46,27 @@ namespace LoanCalculator.Models
             //
             // MonthlyPayment = (LoanAmount * InterestRate) / (1 - (Math.Pow(1 + ((InterestRate / 100) / 12), NumberOfPayments * -1)));
 
+            // Payment Count
             int paymentYearCount = IsBiWeekly ? 26 : 12;
             int totalPayments = paymentYearCount * LoanTerm;
 
+            // Principle
             double principle = LoanAmount;
             double principleTal = principle / totalPayments;
             double principleLeft = principle;
 
+            // Interest
             double interestTotal = InterestRate * LoanAmount;
             double interestTal = interestTotal / totalPayments;
             double interestLeft = interestTotal;
 
+            // Total
             double totalToPay = interestTotal + LoanAmount;
             double totalLeft = totalToPay;
             double totalTal = totalToPay;
-
             double averagePayment = totalToPay / totalPayments;
             
+            // Generate Each Payment
             for(int i = 0; i < totalPayments; i++)
             {
                 principleLeft = principleLeft - principleTal;
