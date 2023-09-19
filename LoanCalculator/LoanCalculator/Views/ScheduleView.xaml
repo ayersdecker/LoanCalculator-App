@@ -38,7 +38,7 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                            <Label Text="{Binding PaymentNumber, StringFormat='{0:C}'}" Grid.Column="0" />
+                            <Label Text="{Binding PaymentNumber}" Grid.Column="0" />
                             <Label Text="{Binding StartBalance, StringFormat='{0:C}'}" Grid.Column="1" />
                             <Label Text="{Binding PaymentAmount, StringFormat='{0:C}'}" Grid.Column="2" />
                             <Label Text="{Binding InterestPaid, StringFormat='{0:C}'}" Grid.Column="3" />
