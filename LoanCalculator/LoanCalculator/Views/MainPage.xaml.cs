@@ -32,10 +32,12 @@ public partial class MainPage : ContentPage
         bool monthly = MonthToggle.IsToggled;
 
         // Create the schedule
-        ScheduleModel schedule = new ScheduleModel(loanAmount, interestRate, loanPeriod, monthly);
+        ScheduleModel scheduleTemp = new ScheduleModel(loanAmount, interestRate, loanPeriod, monthly);
 
         // Display the payment
-        Payment.Text = schedule.Payments[0].PaymentAmount.ToString("C2");
+        Payment.Text = scheduleTemp.MonthlyPayment.ToString();
+
+        schedule = scheduleTemp;
     }
 
     private void ClearForm(object sender, EventArgs e)
@@ -50,7 +52,7 @@ public partial class MainPage : ContentPage
     private void RadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
         // Set the loan period based on the radio button that was checked
-        LoanPeriod = (int)((RadioButton)sender).Value;
+        LoanPeriod = int.Parse(((RadioButton)sender).Value.ToString());
     }
 
     private void View_Clicked(object sender, EventArgs e)

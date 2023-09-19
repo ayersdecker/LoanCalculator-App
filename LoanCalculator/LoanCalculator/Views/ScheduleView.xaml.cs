@@ -4,11 +4,13 @@ namespace LoanCalculator.Views;
 
 public partial class ScheduleView : ContentPage
 {
+	public ScheduleModel ScheduleModel;
 	public ScheduleView(ScheduleModel schedule)
 	{
 		InitializeComponent();
 		// Binding
-		PaymentCollection.ItemsSource = schedule.Payments;
+		ScheduleModel = schedule;
+		PaymentCollection.ItemsSource = ScheduleModel.Payments;
 	}
 
     private void Back_Clicked(object sender, EventArgs e)

@@ -4,7 +4,7 @@
              x:Class="LoanCalculator.Views.ScheduleView"
              xmlns:local="clr-namespace:LoanCalculator.Models"
              Title="ScheduleView">
-
+    <ScrollView>
     <VerticalStackLayout>
         
         <!-- Schedule -->
@@ -38,12 +38,12 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Label Text="{Binding PaymentNumber}" Grid.Column="0" />
-                        <Label Text="{Binding StartBalance}" Grid.Column="1" />
-                        <Label Text="{Binding PaymentAmount}" Grid.Column="2" />
-                        <Label Text="{Binding InterestPaid}" Grid.Column="3" />
-                        <Label Text="{Binding NewBalance}" Grid.Column="4" />
-                        <Label Text="{Binding PaymentAmount}" Grid.Column="5" />
+                            <Label Text="{Binding PaymentNumber, StringFormat='{0:C}'}" Grid.Column="0" />
+                            <Label Text="{Binding StartBalance, StringFormat='{0:C}'}" Grid.Column="1" />
+                            <Label Text="{Binding PaymentAmount, StringFormat='{0:C}'}" Grid.Column="2" />
+                            <Label Text="{Binding InterestPaid, StringFormat='{0:C}'}" Grid.Column="3" />
+                            <Label Text="{Binding NewBalance, StringFormat='{0:C}'}" Grid.Column="4" />
+                            <Label Text="{Binding PaymentAmount, StringFormat='{0:C}'}" Grid.Column="5" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
@@ -52,4 +52,5 @@
         <!-- Back Button -->
         <Button Text="Back" Clicked="Back_Clicked"/>
     </VerticalStackLayout>
+</ScrollView>
 </ContentPage>
