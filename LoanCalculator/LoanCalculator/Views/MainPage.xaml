@@ -24,6 +24,7 @@
             <HorizontalStackLayout Margin="10" HorizontalOptions="Center">
                 <Label x:Name="MonthLabel" Text="Monthly" VerticalOptions="Center" FontAttributes="Bold"/>
                 <Switch x:Name="MonthToggle" IsToggled="True" ThumbColor="#999" Toggled="MonthToggle_Toggled"/>
+                <Label Text="Bi-Monthly" VerticalOptions="Center" HorizontalOptions="Center" />
             </HorizontalStackLayout>
             
             <!-- Calculated Payment Amount -->
@@ -39,11 +40,11 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="ClearButton" Grid.Column="0" Margin="5" Text="Clear" BackgroundColor="#999" Clicked="ClearForm"/>
-                <Button x:Name="CreateButton"  Grid.Column="1" Margin="0,5,5,5" Text="Create" Clicked="CreateButton_Clicked"/>
+                <Button x:Name="CreateButton"  Grid.Column="1" Margin="0,5,5,5" Text="Calculate" Clicked="CreateButton_Clicked"/>
             </Grid>
             
             <!-- Payment Schedule -->
-            <Button Text="View Schedule" Margin="20" Clicked="View_Clicked"/>
+            <Button Text="View Payment Schedule" Margin="20" Clicked="View_Clicked"/>
 
         </VerticalStackLayout>
     </ScrollView>

@@ -20,7 +20,7 @@ public partial class MainPage : ContentPage
     private void MonthToggle_Toggled(object sender, ToggledEventArgs e)
     {
         // Change the label based on the toggle
-		MonthLabel.Text = MonthToggle.IsToggled ? "Monthly" : "Bi-Weekly";
+		//MonthLabel.Text = MonthToggle.IsToggled ? "Monthly" : "Bi-Weekly";
     }
 
     private void CreateButton_Clicked(object sender, EventArgs e)
@@ -35,7 +35,7 @@ public partial class MainPage : ContentPage
         ScheduleModel scheduleTemp = new ScheduleModel(loanAmount, interestRate, loanPeriod, monthly);
 
         // Display the payment
-        Payment.Text = scheduleTemp.MonthlyPayment.ToString();
+        Payment.Text = $"{scheduleTemp.MonthlyPayment:C}";
 
         schedule = scheduleTemp;
     }
