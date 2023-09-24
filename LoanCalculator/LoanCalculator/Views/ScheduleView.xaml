@@ -37,7 +37,6 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                             <Label Text="{Binding PaymentNumber}" Grid.Column="0" />
                             <Label Text="{Binding StartBalance, StringFormat='{0:C}'}" Grid.Column="1" />
