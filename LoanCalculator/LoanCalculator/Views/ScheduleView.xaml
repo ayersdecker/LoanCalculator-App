@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LoanCalculator.Views.ScheduleView"
              xmlns:local="clr-namespace:LoanCalculator.Models"
-             Title="ScheduleView">
+             Title="ScheduleView"
+             Padding="20">
     <ScrollView>
     <VerticalStackLayout>
         
@@ -12,26 +13,26 @@
             <CollectionView.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width=".5*"/>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Label Text="Payment Number" FontSize="Micro" Grid.Column="0" />
-                    <Label Text="Start Balance" FontSize="Micro" Grid.Column="1" />
-                    <Label Text="Principle Paid" FontSize="Micro" Grid.Column="2" />
-                    <Label Text="Interest Paid}" FontSize="Micro" Grid.Column="3" />
-                    <Label Text="New Balance" FontSize="Micro" Grid.Column="4" />
-                    <Label Text="Payment Amount" FontSize="Micro" Grid.Column="5" />
+                        <Label Text="Payment #" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="0" />
+                        <Label Text="Start&#10;Balance" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="1" />
+                        <Label Text="Payment&#10;Amount" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="2" />
+                        <Label Text="Interest&#10;Paid" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="3" />
+                        <Label Text="Principle&#10;Paid" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="4" />
+                        <Label Text="New&#10;Balance" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="5" />
                 </Grid>
             </CollectionView.Header>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="local:PaymentModel">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width=".5*" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />

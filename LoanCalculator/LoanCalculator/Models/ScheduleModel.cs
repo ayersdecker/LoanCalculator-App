@@ -109,7 +109,7 @@ namespace LoanCalculator.Models
 
             //What is the Monthly Interest Payment?
             //          ans. Loan Amount(Principle that is left) * Monthly Interest Rate
-            double monthlyIntPayment = principleLeft * monthlyIntRate;
+                        double monthlyIntPayment = principleLeft * monthlyIntRate;
 
             //What is the amount of the monthly payment that goes towards principal?
             //          ans. Monthly Payment - monthlyIntPayment
@@ -117,7 +117,7 @@ namespace LoanCalculator.Models
 
             //What is the remaining principle after a payment:
             //          ans. The Balance that is Left minus the current month's payment on the principal
-                        principleLeft = principleLeft - currentMonthPrincPaid;
+                        //principleLeft = principleLeft - currentMonthPrincPaid;
 
 
             //What is the total interest paid to date?
@@ -132,12 +132,12 @@ namespace LoanCalculator.Models
                 monthlyIntPayment = principleLeft * monthlyIntRate;
                 currentMonthPrincPaid = monthlyPayment - monthlyIntPayment;
                 totalIntToDate += monthlyIntPayment;
-                principleLeft = principleLeft - currentMonthPrincPaid;
+                
 
                 
                 payments.Add(new PaymentModel(i+1, monthlyPayment, monthlyIntPayment, currentMonthPrincPaid,startingBalance, principleLeft));
-                                             
 
+                principleLeft = principleLeft - currentMonthPrincPaid;
             }
 
             return payments;
