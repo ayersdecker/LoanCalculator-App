@@ -5,12 +5,30 @@
              xmlns:local="clr-namespace:LoanCalculator.Models"
              Title="ScheduleView"
              Padding="20">
-    <ScrollView>
     <VerticalStackLayout>
-        
+        <Grid HeightRequest="100">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".5*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+            <Label Text="Payment #" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="0" />
+            <Label Text="Start&#10;Balance" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="1" />
+            <Label Text="Payment&#10;Amount" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="2" />
+            <Label Text="Interest&#10;Paid" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="3" />
+            <Label Text="Principle&#10;Paid" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="4" />
+            <Label Text="New&#10;Balance" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="5" />
+
+       </Grid>                   
+      
         <!-- Schedule -->
-        <CollectionView x:Name="PaymentCollection" >
-            <CollectionView.Header>
+        <ScrollView>
+            <CollectionView x:Name="PaymentCollection" >
+            
+                <!--<CollectionView.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width=".5*"/>
@@ -27,31 +45,35 @@
                         <Label Text="Principle&#10;Paid" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="4" />
                         <Label Text="New&#10;Balance" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="5" />
                 </Grid>
-            </CollectionView.Header>
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="local:PaymentModel">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width=".5*" />
-                            <ColumnDefinition Width="*" />
-                               <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
+            </CollectionView.Header>-->
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="local:PaymentModel">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".5*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
                             <Label Text="{Binding PaymentNumber}" Grid.Column="0" />
                             <Label Text="{Binding StartBalance, StringFormat='{0:C}'}" Grid.Column="1" />
                             <Label Text="{Binding PaymentAmount, StringFormat='{0:C}'}" Grid.Column="2" />
                             <Label Text="{Binding InterestPaid, StringFormat='{0:C}'}" Grid.Column="3" />
                             <Label Text="{Binding PrincipalPaid, StringFormat='{0:C}'}" Grid.Column="4" />
                             <Label Text="{Binding NewBalance, StringFormat='{0:C}'}" Grid.Column="5" />
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            
         </CollectionView>
         
         <!-- Back Button -->
-        <Button Text="Back" Clicked="Back_Clicked"/>
+        
+        
+        </ScrollView>
+        <!--<Button Text="Back" Clicked="Back_Clicked"/>-->
     </VerticalStackLayout>
-</ScrollView>
+
 </ContentPage>
