@@ -9,7 +9,7 @@
     <VerticalStackLayout>
         
         <!-- Schedule -->
-        <CollectionView x:Name="PaymentCollection">
+        <CollectionView x:Name="PaymentCollection" >
             <CollectionView.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -34,6 +34,7 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width=".5*" />
                             <ColumnDefinition Width="*" />
+                               <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />

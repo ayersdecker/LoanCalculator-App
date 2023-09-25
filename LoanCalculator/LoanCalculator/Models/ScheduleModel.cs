@@ -132,12 +132,12 @@ namespace LoanCalculator.Models
                 monthlyIntPayment = principleLeft * monthlyIntRate;
                 currentMonthPrincPaid = monthlyPayment - monthlyIntPayment;
                 totalIntToDate += monthlyIntPayment;
-                
+                principleLeft = principleLeft - currentMonthPrincPaid;
 
                 
                 payments.Add(new PaymentModel(i+1, monthlyPayment, monthlyIntPayment, currentMonthPrincPaid,startingBalance, principleLeft));
 
-                principleLeft = principleLeft - currentMonthPrincPaid;
+                
             }
 
             return payments;
