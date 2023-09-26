@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LoanCalculator.Views.ScheduleView"
-             xmlns:local="clr-namespace:LoanCalculator.Models"
+             xmlns:local="clr-namespace:LoanCalculator.Models"             
              Title="ScheduleView"
              Padding="20">
     <VerticalStackLayout>
@@ -15,7 +15,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-            <Label Text="Payment #" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="0" />
+            <Label Text="Payment #" FontSize="Micro" TextColor="Blue" FontAttributes="Bold" Grid.Column="0" />
             <Label Text="Start&#10;Balance" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="1" />
             <Label Text="Payment&#10;Amount" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="2" />
             <Label Text="Interest&#10;Paid" FontSize="Micro" TextColor="DarkGreen" FontAttributes="Bold" Grid.Column="3" />
