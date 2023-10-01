@@ -2,6 +2,9 @@
 
 using LoanCalculator.Models;
 using LoanCalculator.Views;
+using Microsoft.UI.Xaml.Controls;
+using Windows.Devices.Sensors;
+using Windows.UI.ViewManagement;
 
 namespace LoanCalculator;
 
